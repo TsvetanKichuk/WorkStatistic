@@ -1,17 +1,17 @@
 import os
 from scrapy.crawler import CrawlerProcess
 from scrapy.utils.project import get_project_settings
-from scraping.work_scraping.spiders.douua import DouuaSpider
+from scraping.work_scraping.spiders.douua import DouuaSpider ##work_scraping
 
 from config import SCRAPING_OUTPUT_FILE
-from scraping.work_scraping.spiders.workua import WorkuaSpider
+
 
 os.environ.setdefault(
-    "SCRAPY_SETTINGS_MODULE", "scraping.job_scraping.settings"
+    "SCRAPY_SETTINGS_MODULE", "scraping.work_scraping.settings"
 )
 
 
-def work_scraping():
+def scrape_jobs():
     print("\nStarting scraping...\n")
 
     if os.path.exists(SCRAPING_OUTPUT_FILE):
@@ -29,8 +29,7 @@ def work_scraping():
     process = CrawlerProcess(settings)
 
     try:
-        print("Scraping started...")
-        process.crawl(WorkuaSpider)
+        print("Scraping Dou.ua started...")
         process.crawl(DouuaSpider)
         process.start()
     except Exception as e:
@@ -41,4 +40,4 @@ def work_scraping():
 
 
 if __name__ == "__main__":
-    work_scraping()
+    scrape_jobs()

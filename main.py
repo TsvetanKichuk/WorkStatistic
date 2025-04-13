@@ -1,5 +1,5 @@
 from analytics import analysis, visualization
-from scraping.work_scraping import scraper
+from scraping import scraper
 
 
 if __name__ == "__main__":

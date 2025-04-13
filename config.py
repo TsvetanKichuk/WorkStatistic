@@ -6,7 +6,7 @@ DOUUA_URL = "https://jobs.dou.ua/vacancies/?category=Python"
 SCRAPING_OUTPUT_FILE = "scraping/data/jobs.csv"
 
 # Output analysis file path
-ANALYSIS_OUTPUT_FILE = "analytics/data/tech_counts.csv"
+ANALYSIS_OUTPUT_FILE = "analytics/data/jobs_counts.csv"
 
 TECHNOLOGIES_TO_ANALYZE = [
     "python",
